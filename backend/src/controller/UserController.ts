@@ -21,7 +21,7 @@ export class UserController {
             }
 
             // const userBusiness = new UserBusiness();
-            const token = await this.userBusiness.createUser(input);
+            const token = await userBusiness.createUser(input);
 
             res.status(200).send({ token });
 
@@ -42,7 +42,7 @@ export class UserController {
             };
 
             // const userBusiness = new UserBusiness();
-            const token = await this.userBusiness.getUserByEmail(loginData);
+            const token = await userBusiness.getUserByEmail(loginData);
 
             res.status(200).send({ token });
 
