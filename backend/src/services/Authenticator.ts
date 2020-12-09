@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export class TokenGenerator {
-  private static expiresIn: number = 1200;
+  private static expiresIn: string = "24h";
 
   public generate = (input: AuthenticationData): string => {
     const newToken = jwt.sign(

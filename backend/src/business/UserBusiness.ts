@@ -36,12 +36,12 @@ export class UserBusiness {
         const id = idGenerator.generate();
 
         const hashManager = new HashManager();
-        const hashPassword = await hashManager.hash(user.password);
+        const hashPassword = await hashManager.hash(password);
 
         const userDatabase = new UserDatabase();
-        await userDatabase.createUser(id, user.email, user.name, hashPassword, user.role);
+        await userDatabase.createUser(id, email, name, hashPassword, role);
 
-        const accessToken = tokenGenerator.generate({ id, role: user.role });
+        const accessToken = tokenGenerator.generate({ id, role: role });
 
         return {accessToken};
         
